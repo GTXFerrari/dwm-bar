@@ -12,7 +12,7 @@ dwm_networkmanager () {
         CONNAME=$(nmcli -t -f active,ssid dev wifi | grep '^yes' | cut -c 5-)
     fi
 
-    PRIVATE=$(nmcli -a | grep 'inet4 192' | awk '{print $2}')
+    PRIVATE=$(nmcli -a | grep 'inet4 10' | awk '{print $2}')
     PUBLIC=$(curl -s https://ipinfo.io/ip)
 
     if [ "$IDENTIFIER" = "unicode" ]; then
