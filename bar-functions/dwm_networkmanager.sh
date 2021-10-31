@@ -13,7 +13,7 @@ dwm_networkmanager () {
     fi
 
     PRIVATE=$(nmcli -a | grep 'inet4 10' | awk '{print $2}')
-    PUBLIC=$(curl -s https://ipinfo.io/ip)
+#    PUBLIC=$(curl -s https://ipinfo.io/ip)
 
     if [ "$IDENTIFIER" = "unicode" ]; then
         export __DWM_BAR_NETWORKMANAGER__="${SEP1}🌐 ${CONNAME} ${PRIVATE} ${PUBLIC}${SEP2}"
